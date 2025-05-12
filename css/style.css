@@ -2531,3 +2531,50 @@ body {
         text-align: center;
     }
 }
+/* Garante que paddings não quebrem o layout */
+* {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.cyber-header {
+  padding: 15px 30px;
+}
+
+/* CONTAINER ESPECÍFICO DO HEADER */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo-container {
+  padding: 5px 0;
+}
+
+.cyber-logo-img {
+  height: 50px; /* Deixa menor */
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* NAVEGAÇÃO */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.cyber-nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cyber-nav a {
+  text-decoration: none;
+  /* Cores mantidas do original */
+}
