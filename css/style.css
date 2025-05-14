@@ -300,8 +300,8 @@ body {
 /* Hero Section */
 .cyber-hero {
     height: 100vh;
-    min-height: 500px; /* Reduzido para dispositivos menores */
-    max-height: 1200px; /* Limite máximo para telas muito grandes */
+    min-height: 500px;
+    max-height: 1200px;
     display: flex;
     align-items: center;
     position: relative;
@@ -314,47 +314,72 @@ body {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
-    margin: 0 auto; /* Centraliza o conteúdo */
-    width: 90%; /* Permite melhor ajuste em telas menores */
+    margin: 0 auto;
+    width: 90%;
 }
 
 .cyber-title {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 8vw, 4rem); /* Tamanho responsivo */
+    font-size: clamp(1.5rem, 4vw, 2.2rem); /* Tamanho reduzido e ajuste de vw */
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    letter-spacing: 0.5rem;
+    margin: 0 auto 1rem;
+    line-height: 1.2; /* Linha mais compacta */
+    letter-spacing: 0.15rem; /* Espaçamento reduzido */
     text-transform: uppercase;
     position: relative;
     color: var(--text-color);
+    text-align: center;
+    max-width: 100%;
+    display: block;
+    padding: 0 0.5rem;
+    white-space: normal; /* Garante que o texto flua normalmente */
+    word-break: normal; /* Permite quebra normal de palavras */
+    overflow-wrap: break-word; /* Quebra apenas quando necessário */
 }
 
 .cyber-title::before {
     content: attr(data-text);
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 100%;
     color: var(--secondary-color);
     overflow: hidden;
     transition: 1s;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .cyber-title:hover::before {
     width: 100%;
+    left: 0;
+    transform: translateX(0);
     filter: drop-shadow(0 0 10px var(--secondary-color));
 }
 
-.cyber-subtitle {
-    font-size: clamp(1rem, 3vw, 1.2rem); /* Tamanho responsivo */
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    max-width: 600px;
-    letter-spacing: 0.1rem;
+/* Ajustes específicos para desktop */
+@media (min-width: 992px) {
+    .cyber-title {
+        font-size: 2rem; /* Tamanho fixo para desktop */
+        line-height: 1.3;
+        letter-spacing: 0.2rem;
+        white-space: normal; /* Garante que não force quebras */
+    }
 }
-
+.cyber-subtitle {
+    font-size: clamp(0.9rem, 3.5vw, 1.3rem); /* Faixa mais ampla */
+    margin: 0 auto 2rem; /* Centralizado com margem */
+    font-weight: 300;
+    width: 85%; /* Largura controlada */
+    max-width: 700px; /* Limite máximo */
+    letter-spacing: 0.05rem; /* Reduzido para mobile */
+    line-height: 1.5; /* Melhor legibilidade */
+    text-align: center; /* Centralizado */
+    padding: 0 1rem; /* Padding lateral para mobile */
+    word-break: normal; /* Quebra de palavras controlada */
+}
 .hero-background {
     position: absolute;
     top: 0;
@@ -2614,5 +2639,1753 @@ body {
     }
     100% {
         box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
+    }
+}
+.cyber-feature {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid #00f0ff;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.cyber-feature p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #aaa;
+}
+
+.cta-wrapper {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.cta-text {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.cta-text span {
+    color: #00f0ff;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Ajuste o botão existente se necessário */
+.cyber-button.big {
+    font-size: 1.1em;
+    padding: 12px 30px;
+}
+
+.cyber-button {
+    background-color: #00ffae;
+    color: #000;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cyber-button:hover {
+    background-color: #00cc8c;
+    transform: scale(1.05);
+}
+
+.cyber-hero {
+    position: relative;
+    padding: 80px 20px 60px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin-top: -80px;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.cyber-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #00f0ff;
+}
+
+.cyber-title .line-1,
+.cyber-title .line-2 {
+    display: block;
+}
+
+.cyber-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .cyber-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    letter-spacing: 0.8px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .cyber-title .line-1 {
+    display: inline-block;  /* Mantenha a linha 1 em uma linha */
+    white-space: nowrap; /* Evita quebra de palavra */
+    overflow-wrap: normal;
+    max-width: 100%; /* Garante que o texto ocupe 100% do espaço disponível */
+    word-wrap: normal; /* Não permite quebra de palavra */
+  }
+
+  .cyber-title .line-2 {
+    display: block;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .cyber-hero {
+    padding-top: 60px;
+    min-height: calc(100vh - 60px);
+    margin-top: -60px;
+  }
+
+  .hero-content {
+    margin-top: 60px;
+    padding: 0 10px;
+    max-width: 100%;
+  }
+
+  .cyber-title {
+    font-size: 22px;  /* Ajustado para caber sem quebrar */
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-width: 100%; /* Garante que o título caiba */
+  }
+
+  .cyber-title .line-1 {
+    display: inline-block;  /* Mantém a palavra em linha */
+    white-space: nowrap; /* Evita quebra de linha */
+    overflow-wrap: normal;
+    max-width: 100%;  /* Garante que a linha 1 ocupe a largura disponível */
+    word-wrap: normal; /* Impede a quebra da palavra */
+    text-align: center;
+  }
+
+  .cyber-title .line-2 {
+    display: block;
+    text-align: center;
+  }
+
+  .cyber-subtitle {
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .cyber-button.big {
+    font-size: 0.95em;
+    padding: 10px 22px;
+  }
+}
+/* Seção de Dores - Estilo Cyber */
+.cyber-pain-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--primary-dark);
+    border-top: 1px solid rgba(78, 205, 196, 0.3);
+    overflow: hidden;
+}
+
+.cyber-circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(78,205,196,0.05)" stroke-width="0.5"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.cyber-pain-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.cyber-pain-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--secondary-color);
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.cyber-pain-title:hover::before {
+    width: 100%;
+}
+
+.cyber-pain-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+}
+
+.cyber-glow {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.7);
+}
+
+.cyber-pain-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cyber-pain-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.cyber-highlight {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.cyber-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.cyber-pain-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-pain-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
+}
+
+.pulse-border {
+    animation: pulse-border 3s infinite;
+}
+
+@keyframes pulse-border {
+    0% { border-color: rgba(78, 205, 196, 0.2); }
+    50% { border-color: var(--secondary-color); }
+    100% { border-color: rgba(78, 205, 196, 0.2); }
+}
+
+.pain-icon {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: rgba(78, 205, 196, 0.3);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.cyber-pain-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.cyber-pain-card p {
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: 0;
+}
+
+.cyber-warning-box {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.warning-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.cyber-warning-box p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cyber-pain-section {
+        padding: 70px 20px;
+    }
+    
+    .cyber-pain-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-warning-box {
+        padding: 25px 15px;
+    }
+    
+    .cyber-warning-box p {
+        font-size: 1rem;
+    }
+}
+/* Seção de Dores - Estilo Cyber */
+.cyber-pain-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--primary-dark);
+    border-top: 1px solid rgba(78, 205, 196, 0.3);
+    overflow: hidden;
+}
+
+.cyber-circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(78,205,196,0.05)" stroke-width="0.5"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.cyber-pain-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.cyber-pain-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--secondary-color);
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.cyber-pain-title:hover::before {
+    width: 100%;
+}
+
+.cyber-pain-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+}
+
+.cyber-glow {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.7);
+}
+
+.cyber-pain-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cyber-pain-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.cyber-highlight {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.cyber-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.cyber-pain-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-pain-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
+}
+
+.pulse-border {
+    animation: pulse-border 3s infinite;
+}
+
+@keyframes pulse-border {
+    0% { border-color: rgba(78, 205, 196, 0.2); }
+    50% { border-color: var(--secondary-color); }
+    100% { border-color: rgba(78, 205, 196, 0.2); }
+}
+
+.pain-icon {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: rgba(78, 205, 196, 0.3);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.cyber-pain-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.cyber-pain-card p {
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: 0;
+}
+
+.cyber-warning-box {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.warning-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.cyber-warning-box p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cyber-pain-section {
+        padding: 70px 20px;
+    }
+    
+    .cyber-pain-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-warning-box {
+        padding: 25px 15px;
+    }
+    
+    .cyber-warning-box p {
+        font-size: 1rem;
+    }
+}
+/* Seção de Dores - Estilo Cyber */
+.cyber-pain-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--primary-dark);
+    border-top: 1px solid rgba(78, 205, 196, 0.3);
+    overflow: hidden;
+}
+
+.cyber-circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(78,205,196,0.05)" stroke-width="0.5"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.cyber-pain-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.cyber-pain-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--secondary-color);
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.cyber-pain-title:hover::before {
+    width: 100%;
+}
+
+.cyber-pain-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+}
+
+.cyber-glow {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.7);
+}
+
+.cyber-pain-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cyber-pain-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.cyber-highlight {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.cyber-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.cyber-pain-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-pain-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
+}
+
+.pulse-border {
+    animation: pulse-border 3s infinite;
+}
+
+@keyframes pulse-border {
+    0% { border-color: rgba(78, 205, 196, 0.2); }
+    50% { border-color: var(--secondary-color); }
+    100% { border-color: rgba(78, 205, 196, 0.2); }
+}
+
+.pain-icon {
+    color: rgba(78, 205, 196, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pain-icon svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 5px rgba(78, 205, 196, 0.3));
+}
+
+.cyber-pain-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.cyber-pain-card p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: 0;
+}
+
+.cyber-pain-card p strong {
+    color: var(--text-color);
+}
+
+.cyber-warning-box {
+    background: rgba(255, 107, 107, 0.1);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 30px;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+.warning-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.cyber-warning-box p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cyber-pain-section {
+        padding: 70px 20px;
+    }
+    
+    .cyber-pain-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-warning-box {
+        padding: 25px 15px;
+    }
+    
+    .cyber-warning-box p {
+        font-size: 1rem;
+    }
+}
+/* Seção Cadeia de Custódia */
+.cyber-chain-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--primary-dark);
+    border-top: 1px solid rgba(255, 107, 107, 0.3);
+    overflow: hidden;
+}
+
+.cyber-chain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 107, 107, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 107, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+}
+
+.cyber-chain-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.cyber-chain-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--accent-color);
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.cyber-chain-title:hover::before {
+    width: 100%;
+}
+
+.cyber-chain-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+}
+
+.cyber-chain-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.cyber-chain-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 5px;
+    padding: 40px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.cyber-chain-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+}
+
+.chain-icon {
+    margin: 0 auto 25px;
+    width: 80px;
+    height: 80px;
+}
+
+.chain-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+}
+
+.cyber-chain-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.cyber-chain-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--gray-light);
+}
+
+.cyber-accent {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.cyber-chain-consequence {
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid var(--accent-color);
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.consequence-icon {
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.consequence-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cyber-chain-consequence h4 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.cyber-chain-consequence p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.cyber-chain-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Animação de emergência para o botão */
+@keyframes pulseEmergency {
+    0% {
+        box-shadow: 0 0 0 0 rgba(250, 82, 82, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(250, 82, 82, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(250, 82, 82, 0);
+    }
+}
+
+.cyber-button.emergency {
+    background-color: var(--danger-color);
+    color: white;
+    animation: pulseEmergency 2s infinite;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cyber-chain-section {
+        padding: 70px 20px;
+    }
+    
+    .cyber-chain-card {
+        padding: 30px 20px;
+    }
+    
+    .cyber-chain-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .cyber-chain-consequence {
+        flex-direction: column;
+    }
+}
+/* Estilos para a seção "Decifrando o Tecniquês" */
+.cyber-pain-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--primary-dark);
+    border-top: 1px solid rgba(78, 205, 196, 0.3);
+    overflow: hidden;
+}
+
+.cyber-circuit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,100 M100,0 L0,100" stroke="rgba(78,205,196,0.05)" stroke-width="0.5"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.cyber-pain-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.cyber-pain-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--secondary-color);
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.cyber-pain-title:hover::before {
+    width: 100%;
+}
+
+.cyber-pain-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+}
+
+.cyber-glow {
+    color: var(--secondary-color);
+    text-shadow: 0 0 10px rgba(78, 205, 196, 0.7);
+}
+
+.cyber-pain-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.cyber-pain-content p {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.cyber-highlight {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.cyber-pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.cyber-pain-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-pain-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
+}
+
+.pulse-border {
+    animation: pulse-border 3s infinite;
+}
+
+@keyframes pulse-border {
+    0% { border-color: rgba(78, 205, 196, 0.2); }
+    50% { border-color: var(--secondary-color); }
+    100% { border-color: rgba(78, 205, 196, 0.2); }
+}
+
+.pain-icon {
+    color: rgba(78, 205, 196, 0.5);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pain-icon svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 5px rgba(78, 205, 196, 0.3));
+}
+
+.cyber-pain-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.cyber-pain-card p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--gray-medium);
+    margin-bottom: 0;
+}
+
+.cyber-pain-card p strong {
+    color: var(--text-color);
+}
+
+.cyber-chain-consequence {
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid var(--accent-color);
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    border-radius: 0 5px 5px 0;
+}
+
+.consequence-icon {
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.consequence-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cyber-chain-consequence h4 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.cyber-chain-consequence p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.cyber-chain-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cyber-pain-section {
+        padding: 70px 20px;
+    }
+    
+    .cyber-pain-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cyber-chain-consequence {
+        flex-direction: column;
+    }
+    
+    .cyber-pain-title {
+        font-size: 1.8rem;
+    }
+    
+    .cyber-pain-subtitle {
+        font-size: 1.2rem;
+    }
+}
+/* Seção Detalhes Técnicos */
+.tech-details-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--primary-dark);
+    border-top: 1px solid rgba(78, 205, 196, 0.3);
+    overflow: hidden;
+}
+
+.tech-details-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(78, 205, 196, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78, 205, 196, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.tech-details-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.tech-details-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+    color: var(--text-color);
+    position: relative;
+    text-transform: uppercase;
+}
+
+.tech-details-title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--secondary-color);
+    overflow: hidden;
+    transition: 1s;
+    text-align: center;
+}
+
+.tech-details-title:hover::before {
+    width: 100%;
+}
+
+.tech-details-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: var(--gray-light);
+    font-weight: 300;
+}
+
+.highlight {
+    color: var(--secondary-color);
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(78, 205, 196, 0.5);
+}
+
+.tech-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.tech-detail-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 5px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.tech-detail-card:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(78, 205, 196, 0.2);
+}
+
+.detail-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+}
+
+.detail-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 0 5px rgba(78, 205, 196, 0.5));
+}
+
+.tech-detail-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.tech-detail-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-light);
+    text-align: left;
+}
+
+.tech-detail-card p strong {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.tech-consequence {
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid var(--accent-color);
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    margin: 0 auto 30px;
+    max-width: 800px;
+    border-radius: 0 5px 5px 0;
+}
+
+.consequence-icon {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    color: var(--accent-color);
+    margin-top: 3px;
+}
+
+.consequence-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+}
+
+.tech-consequence h4 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.tech-consequence p {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .tech-details-section {
+        padding: 70px 20px;
+    }
+    
+    .tech-details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-consequence {
+        flex-direction: column;
+    }
+    
+    .tech-details-title {
+        font-size: 1.8rem;
+    }
+    
+    .tech-details-subtitle {
+        font-size: 1.2rem;
+    }
+}
+/* Seção do Ciclo da Prova Digital - Cyber Style */
+.cyber-process {
+  background-color: var(--primary-darker);
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.cyber-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.cyber-process-header {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.cyber-process-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.cyber-process-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: var(--secondary-color);
+  overflow: hidden;
+  transition: 1s;
+}
+
+.cyber-process-title:hover::before {
+  width: 100%;
+  filter: drop-shadow(0 0 10px var(--secondary-color));
+}
+
+.cyber-process-line {
+  height: 2px;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+  margin: 0 auto 20px;
+}
+
+.cyber-process-subtitle {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.cyber-process-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.process-pain-point,
+.process-consequence {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--secondary-color);
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.1);
+  display: flex;
+  gap: 20px;
+}
+
+.process-pain-point:hover,
+.process-consequence:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(78, 205, 196, 0.3);
+}
+
+.pain-icon,
+.consequence-icon {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.pain-content h3,
+.consequence-content h3 {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.pain-content p,
+.consequence-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.process-flow {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--secondary-color);
+  padding: 30px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flow-icon {
+  color: var(--secondary-color);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.flow-content h3 {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--secondary-color), transparent);
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.flow-step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(78, 205, 196, 0.1);
+  border: 2px solid var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.step-name {
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.step-blindspot {
+  color: #ff5555;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cyber-process {
+    padding: 60px 15px;
+  }
+  
+  .cyber-process-title {
+    letter-spacing: 0.3rem;
+  }
+  
+  .process-pain-point,
+  .process-consequence {
+    flex-direction: column;
+  }
+  
+  .flow-steps {
+    flex-direction: column;
+  }
+  
+  .flow-steps::before {
+    display: none;
+  }
+  
+  .flow-step {
+    margin-bottom: 30px;
+  }
+}
+/* CTA Final Styles */
+.cyber-cta-final {
+    background: linear-gradient(135deg, #0d1f26 0%, #1e3f4b 100%);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-image: url('../imagens/cta-pattern.png');
+    background-size: cover;
+    opacity: 0.1;
+}
+
+.cta-final-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-final-title {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.cta-final-text {
+    color: rgba(255,255,255,0.85);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.cta-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.cyber-button.big.pulse {
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    animation: pulse 2s infinite;
+}
+
+.secondary-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.secondary-cta span {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+}
+
+.phone-cta {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.phone-cta:hover {
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .cyber-cta-final {
+        padding: 80px 0;
+    }
+    
+    .cta-final-title {
+        font-size: 1.8rem;
+    }
+    
+    .cta-final-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cyber-cta-final {
+        padding: 60px 20px;
+    }
+    
+    .cyber-cta-final::before {
+        width: 70%;
+    }
+    
+    .cta-final-title {
+        font-size: 1.6rem;
+    }
+    
+    .phone-cta {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cta-final-title {
+        font-size: 1.4rem;
+    }
+    
+    .cyber-button.big.pulse {
+        padding: 15px 25px;
+        font-size: 1rem;
+    }
+    
+    .phone-cta {
+        font-size: 1.1rem;
+    }
+}
+.differentials-intro {
+    padding: 80px 0;
+    background-color: var(--primary-dark);
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(78, 205, 196, 0.2);
+    border-bottom: 1px solid rgba(78, 205, 196, 0.2);
+}
+
+.differentials-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(78, 205, 196, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78, 205, 196, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.differentials-intro .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-light);
+    text-align: center;
+    position: relative;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    border-radius: 5px;
+}
+
+.intro-text::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(78, 205, 196, 0.1);
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+.intro-text strong {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* Efeitos de hover */
+.intro-text:hover {
+    border-color: rgba(78, 205, 196, 0.4);
+    box-shadow: 0 5px 15px rgba(78, 205, 196, 0.2);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .differentials-intro {
+        padding: 60px 20px;
+    }
+    
+    .intro-text {
+        padding: 20px;
+        font-size: 1rem;
     }
 }
